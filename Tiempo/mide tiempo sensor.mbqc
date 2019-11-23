@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mbqc xmlns="http://mbqc.namespaces.minibloq.org" xmlns:minibloq="http://minibloq.org" MinibloqVersion="0.82.Beta">
+    <files/>
+    <properties>
+        <canvas visible="true"/>
+        <blocks count="47"/>
+    </properties>
+    <variables>
+        <tiempo3/>
+        <contador/>
+        <tiempo1/>
+        <sensor/>
+        <tiempo2/>
+        <ControlRemoto/>
+    </variables>
+    <blocks>
+        <ComponentStart function="Flow" commented="false" instanceName="initBoard" paramsCount="0" hasAddParamsButton="false" loadAction="noLoad"/>
+        <VariableInit function="Setter" commented="false" constantValue="ControlRemoto" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <VariableInit function="Setter" commented="false" constantValue="tiempo3" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <VariableInit function="Setter" commented="false" constantValue="contador" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <VariableInit function="Setter" commented="false" constantValue="tiempo1" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <VariableInit function="Setter" commented="false" constantValue="sensor" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <VariableInit function="Setter" commented="false" constantValue="tiempo2" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <while function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberUnequal function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="contador" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="2" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberUnequal>
+        </while>
+        <VariableSetter function="Setter" commented="false" instanceName="ControlRemoto" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <IRRemote function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="ControlRemoto" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialNumber>
+        </Serial>
+        <VariableSetter function="Setter" commented="false" instanceName="sensor" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <analogRead function="Getter" commented="false" instanceName="sensor1" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <if function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </if>
+        <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <if function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolAnd function="Operation" commented="false" paramsCount="2" hasAddParamsButton="true" loadAction="load">
+                <numberGreaterThan function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                    <VariableGetter function="Getter" commented="false" instanceName="sensor" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                    <numberConstant function="Constant" commented="false" constantValue="16" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                </numberGreaterThan>
+                <numberLowerThan function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                    <VariableGetter function="Getter" commented="false" instanceName="contador" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                    <numberConstant function="Constant" commented="false" constantValue="1" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                </numberLowerThan>
+            </boolAnd>
+        </if>
+        <VariableSetter function="Setter" commented="false" instanceName="contador" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberAdd function="Operation" commented="false" paramsCount="2" hasAddParamsButton="true" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="contador" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="1" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberAdd>
+        </VariableSetter>
+        <Code function="Code" commented="false" constantValue="tiempo1 = millis();" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <IOPin function="Setter" commented="false" instanceName="D8" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue="Primera lectura del sensor:" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialText>
+        </Serial>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="sensor" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialNumber>
+        </Serial>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue="aqui el sensor se pone en cero" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialText>
+        </Serial>
+        <VariableSetter function="Setter" commented="false" instanceName="sensor" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue="todavia dentro del primer if" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialText>
+        </Serial>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="sensor" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialNumber>
+        </Serial>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="1000" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <if function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolAnd function="Operation" commented="false" paramsCount="2" hasAddParamsButton="true" loadAction="load">
+                <numberGreaterThan function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                    <VariableGetter function="Getter" commented="false" instanceName="sensor" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                    <numberConstant function="Constant" commented="false" constantValue="16" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                </numberGreaterThan>
+                <numberEqual function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                    <VariableGetter function="Getter" commented="false" instanceName="contador" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                    <numberConstant function="Constant" commented="false" constantValue="1" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                </numberEqual>
+            </boolAnd>
+        </if>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue="sensor dentro del segundo if" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialText>
+        </Serial>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="sensor" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialNumber>
+        </Serial>
+        <Code function="Code" commented="false" constantValue="tiempo2 = millis();" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <IOPin function="Setter" commented="false" instanceName="D8" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantFalse function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <VariableSetter function="Setter" commented="false" instanceName="contador" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="2" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <VariableSetter function="Setter" commented="false" instanceName="tiempo3" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberSub function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="tiempo2" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <VariableGetter function="Getter" commented="false" instanceName="tiempo1" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberSub>
+        </VariableSetter>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="tiempo3" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialNumber>
+        </Serial>
+        <VariableSetter function="Setter" commented="false" instanceName="tiempo3" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberDiv function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="tiempo3" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="1000" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberDiv>
+        </VariableSetter>
+        <if function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberGreaterThanOrEqual function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="tiempo3" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="60" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberGreaterThanOrEqual>
+        </if>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue="Cantidad de Minutos" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialText>
+        </Serial>
+        <VariableSetter function="Setter" commented="false" instanceName="tiempo3" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberDiv function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="tiempo3" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="60" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberDiv>
+        </VariableSetter>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="tiempo3" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialNumber>
+        </Serial>
+        <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue="Cantidad de segundos" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialText>
+        </Serial>
+        <Serial function="Setter" commented="false" instanceName="serial0" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <SerialNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="tiempo3" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </SerialNumber>
+        </Serial>
+        <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <whileEnd function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+    </blocks>
+</mbqc>
